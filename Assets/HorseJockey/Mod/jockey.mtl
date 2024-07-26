@@ -1,0 +1,16 @@
+# 
+# Wavefront material file
+# Created with Kaydara FBX
+# 
+
+newmtl jockey_body
+map_Kd jockey_body.tga
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 2.000000
+Tr 1.000000
+
+newmtl default1
+illum 2

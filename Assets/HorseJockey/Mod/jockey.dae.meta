@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: 8144f68a712b14f28ae62fb865a77a6c
+timeCreated: 1486228179
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base Human
+    100002: Base Human001
+    100004: Base HumanHead
+    100006: Base HumanLCalf
+    100008: Base HumanLCollarbone
+    100010: Base HumanLDigit11
+    100012: Base HumanLDigit12
+    100014: Base HumanLDigit21
+    100016: Base HumanLDigit22
+    100018: Base HumanLFoot
+    100020: Base HumanLForearm
+    100022: Base HumanLPalm
+    100024: Base HumanLPlatform
+    100026: Base HumanLThigh
+    100028: Base HumanLUpperarm
+    100030: Base HumanLUpVectorNode
+    100032: Base HumanNeck1
+    100034: Base HumanNeck2
+    100036: Base HumanPelvis
+    100038: Base HumanRCalf
+    100040: Base HumanRCollarbone
+    100042: Base HumanRDigit11
+    100044: Base HumanRDigit12
+    100046: Base HumanRDigit21
+    100048: Base HumanRDigit22
+    100050: Base HumanRFoot
+    100052: Base HumanRForearm
+    100054: Base HumanRibcage
+    100056: Base HumanRPalm
+    100058: Base HumanRPlatform
+    100060: Base HumanRThigh
+    100062: Base HumanRUpperarm
+    100064: Base HumanRUpVectorNode
+    100066: Base HumanSpine1
+    100068: Base HumanSpine2
+    100070: Base HumanSpine3
+    100072: Base HumanSpine4
+    100074: EnoData
+    100076: //RootNode
+    100078: jockey_body
+    100080: jockey_LOD
+    400000: Base Human
+    400002: Base Human001
+    400004: Base HumanHead
+    400006: Base HumanLCalf
+    400008: Base HumanLCollarbone
+    400010: Base HumanLDigit11
+    400012: Base HumanLDigit12
+    400014: Base HumanLDigit21
+    400016: Base HumanLDigit22
+    400018: Base HumanLFoot
+    400020: Base HumanLForearm
+    400022: Base HumanLPalm
+    400024: Base HumanLPlatform
+    400026: Base HumanLThigh
+    400028: Base HumanLUpperarm
+    400030: Base HumanLUpVectorNode
+    400032: Base HumanNeck1
+    400034: Base HumanNeck2
+    400036: Base HumanPelvis
+    400038: Base HumanRCalf
+    400040: Base HumanRCollarbone
+    400042: Base HumanRDigit11
+    400044: Base HumanRDigit12
+    400046: Base HumanRDigit21
+    400048: Base HumanRDigit22
+    400050: Base HumanRFoot
+    400052: Base HumanRForearm
+    400054: Base HumanRibcage
+    400056: Base HumanRPalm
+    400058: Base HumanRPlatform
+    400060: Base HumanRThigh
+    400062: Base HumanRUpperarm
+    400064: Base HumanRUpVectorNode
+    400066: Base HumanSpine1
+    400068: Base HumanSpine2
+    400070: Base HumanSpine3
+    400072: Base HumanSpine4
+    400074: EnoData
+    400076: //RootNode
+    400078: jockey_body
+    400080: jockey_LOD
+    2300000: Base HumanHead
+    2300002: Base HumanLCalf
+    2300004: Base HumanLCollarbone
+    2300006: Base HumanLDigit11
+    2300008: Base HumanLDigit12
+    2300010: Base HumanLDigit21
+    2300012: Base HumanLDigit22
+    2300014: Base HumanLFoot
+    2300016: Base HumanLForearm
+    2300018: Base HumanLPalm
+    2300020: Base HumanLThigh
+    2300022: Base HumanLUpperarm
+    2300024: Base HumanNeck1
+    2300026: Base HumanNeck2
+    2300028: Base HumanPelvis
+    2300030: Base HumanRCalf
+    2300032: Base HumanRCollarbone
+    2300034: Base HumanRDigit11
+    2300036: Base HumanRDigit12
+    2300038: Base HumanRDigit21
+    2300040: Base HumanRDigit22
+    2300042: Base HumanRFoot
+    2300044: Base HumanRForearm
+    2300046: Base HumanRibcage
+    2300048: Base HumanRPalm
+    2300050: Base HumanRThigh
+    2300052: Base HumanRUpperarm
+    2300054: Base HumanSpine1
+    2300056: Base HumanSpine2
+    2300058: Base HumanSpine3
+    2300060: Base HumanSpine4
+    2300062: jockey_body
+    2300064: jockey_LOD
+    3300000: Base HumanHead
+    3300002: Base HumanLCalf
+    3300004: Base HumanLCollarbone
+    3300006: Base HumanLDigit11
+    3300008: Base HumanLDigit12
+    3300010: Base HumanLDigit21
+    3300012: Base HumanLDigit22
+    3300014: Base HumanLFoot
+    3300016: Base HumanLForearm
+    3300018: Base HumanLPalm
+    3300020: Base HumanLThigh
+    3300022: Base HumanLUpperarm
+    3300024: Base HumanNeck1
+    3300026: Base HumanNeck2
+    3300028: Base HumanPelvis
+    3300030: Base HumanRCalf
+    3300032: Base HumanRCollarbone
+    3300034: Base HumanRDigit11
+    3300036: Base HumanRDigit12
+    3300038: Base HumanRDigit21
+    3300040: Base HumanRDigit22
+    3300042: Base HumanRFoot
+    3300044: Base HumanRForearm
+    3300046: Base HumanRibcage
+    3300048: Base HumanRPalm
+    3300050: Base HumanRThigh
+    3300052: Base HumanRUpperarm
+    3300054: Base HumanSpine1
+    3300056: Base HumanSpine2
+    3300058: Base HumanSpine3
+    3300060: Base HumanSpine4
+    3300062: jockey_body
+    3300064: jockey_LOD
+    4300000: jockey_body
+    4300002: Base HumanPelvis
+    4300004: Base HumanLThigh
+    4300006: Base HumanLCalf
+    4300008: Base HumanLFoot
+    4300010: Base HumanRThigh
+    4300012: Base HumanRCalf
+    4300014: Base HumanRFoot
+    4300016: Base HumanSpine1
+    4300018: Base HumanSpine2
+    4300020: Base HumanSpine3
+    4300022: Base HumanSpine4
+    4300024: Base HumanRibcage
+    4300026: Base HumanLCollarbone
+    4300028: Base HumanLUpperarm
+    4300030: Base HumanLForearm
+    4300032: Base HumanLPalm
+    4300034: Base HumanLDigit11
+    4300036: Base HumanLDigit12
+    4300038: Base HumanLDigit21
+    4300040: Base HumanLDigit22
+    4300042: Base HumanRCollarbone
+    4300044: Base HumanRUpperarm
+    4300046: Base HumanRForearm
+    4300048: Base HumanRPalm
+    4300050: Base HumanRDigit11
+    4300052: Base HumanRDigit12
+    4300054: Base HumanRDigit21
+    4300056: Base HumanRDigit22
+    4300058: Base HumanNeck1
+    4300060: Base HumanNeck2
+    4300062: Base HumanHead
+    4300064: jockey_LOD
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
