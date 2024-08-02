@@ -1,5 +1,11 @@
-/Library/ShaderCache/
-/Library/PackageCache/
 .vs/
 .vscode/
-/Library/Artifacts/
+Library/Artifacts/
+Library/StateCache/
+Temp/ß
+Library/
+Library/StateCache/MainStageHierarchy/
+Library/StateCache/SceneView/
+Temp/obj/Debug/ß
+Logs/AssetImportWorker0-prev.log
+Temp/

@@ -199,7 +199,7 @@ public class OpponentController : MonoBehaviour
 
 		//if(nav.destination != patrolWayPoints[wayPointIndex].transform.position){
 			//nav.destination = patrolWayPoints[wayPointIndex].transform.position;
-			 player.Translate(0,0, patrolSpeed * Time.deltaTime);
+			 player.Translate(0,0, nav.speed * Time.deltaTime);
 			//player.LookAt(nav.destination);
 
 		//}
