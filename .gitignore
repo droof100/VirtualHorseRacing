@@ -3,3 +3,6 @@
 .vs/
 .vscode/
 /Library/Artifacts/
+/Library/
+/Temp/
+/Library/ScriptAssemblies/

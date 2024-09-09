@@ -11,9 +11,15 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Transform cameraTransform = GameObject.FindGameObjectWithTag("Opponent_1").transform;
+        if(GameSharedMemory.currentLeader == null){
+            return;
+        }
+
+        //Transform cameraTransform = GameObject.FindGameObjectWithTag("Opponent_4").transform;
+         Transform cameraTransform = GameSharedMemory.currentLeader.transform;
+
 
          transform.LookAt(cameraTransform);
 
@@ -21,9 +27,6 @@ public class CameraController : MonoBehaviour
 
         
         transform.position =  new Vector3(cameraTransform.position.x + 10,4,cameraTransform.position.z - 10);
-
-        
-
 
         
     }

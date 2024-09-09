@@ -21,9 +21,7 @@ public class Menu_Controller : MonoBehaviour {
 	UnityEngine.SceneManagement.Scene scene;
 
 	void Awake () {
-		if(!PlayerPrefs.HasKey("_Mute")){
 			PlayerPrefs.SetInt("_Mute", 0);
-		}
 		
 		scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
 		PlayerPrefs.SetString("_LastScene", scene.name.ToString()); 
@@ -39,7 +37,16 @@ public class Menu_Controller : MonoBehaviour {
 	public void PlayGame () {
 		_audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetString("_LastScene", scene.name);
+
+		InputField input = GameObject.Find("FinishOrderInput").GetComponent<InputField>();
+
+		if(input != null && input.text.Length > 0){
+			GameSharedMemory.finishOrder = input.text;
+		}
+
+		PlayerPrefs.SetInt("PlayGame", 1);
 		UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay);
+		GameSharedMemory.playGame = true;
 
 
 
