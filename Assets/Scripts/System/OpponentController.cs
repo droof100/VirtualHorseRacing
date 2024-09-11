@@ -192,8 +192,7 @@ void Start(){
 
 		this.transform.Translate(0, 0, speed * Time.deltaTime);
 
-
-		//m_Rigidbody.MovePosition(transform.position + transform.forward * (speed * Time.deltaTime));
+		//m_Rigidbody.MovePosition(transform.position * (speed * Time.deltaTime));
 
 	}
  
