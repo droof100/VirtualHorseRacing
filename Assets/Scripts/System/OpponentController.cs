@@ -1,11 +1,6 @@
 ﻿//OpponentControl.cs handles AI input
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using Random = UnityEngine.Random;
-using UnityEngine.UIElements;
 using System;
 
 
@@ -39,6 +34,8 @@ public class OpponentController : MonoBehaviour
 	GameObject tracker;
 
 	float lookAhead = 10.0f;
+
+	Rigidbody  m_Rigidbody;
  
 
 	void Awake ()
@@ -65,16 +62,38 @@ public class OpponentController : MonoBehaviour
 
 	}
 
-	void OnCollisionEnter(){
-		speed = 0;
-	}
+// 	void OnTriggerEnter(Collider other) {
+
+// 		if(other.name == "Side_Fence"){
+// 			return;
+// 		}
+
+// 	 	MeshRenderer m = GetComponent<MeshRenderer>();
+// 		UnityEngine.Vector3 vec = m.bounds.size;
+
+// 		//	other.transform.Translate()
+
+// 	  	if(GameSharedMemory.currentWP > 10){
+// 	 		float oldx = other.transform.position.x;
+
+// 		// 	other.transform.Translate(-3.0f,0,0);
+// 		print($"***** GameObject {other.name} as moved to {other.transform.position.x} and old x was {oldx}");}
+//   }
+
+
+	// void OnControllerColliderHit(ControllerColliderHit hit) {
+  
+ 
+    //   print($"**** GameObject {hit.gameObject.name} Was Hit!!!!");
+	  	
+	// }
+
+
 
 void Start(){		
 		
 	Transform horseLOD =	 player.Find("Horse_Mobile/horse/horse_body");
 	Renderer renderer = horseLOD.GetComponent<Renderer>();
-
-	print($"Current program number is {this.programNumber}");
 
    if(0 < programNumber && programNumber <= 6 ){
 
@@ -98,6 +117,8 @@ void Start(){
  	renderer.material.EnableKeyword ("_NORMALMAP");
     renderer.material.EnableKeyword ("_METALLICGLOSSMAP");
 	renderer.material.mainTexture = tex;
+
+	 m_Rigidbody = GetComponent<Rigidbody>();
 		
 	}
 
@@ -172,101 +193,10 @@ void Start(){
 		this.transform.Translate(0, 0, speed * Time.deltaTime);
 
 
-		
+		//m_Rigidbody.MovePosition(transform.position + transform.forward * (speed * Time.deltaTime));
+
 	}
+ 
 
 
-	void Shooting ()
-	{
-		// Stop the enemy where it is.
-		nav.Stop();
-	}
-
-
-	void Chasing ()
-	{
-		// Create a vector from the enemy to the last sighting of the player.
-		//Vector3 sightingDeltaPos = enemySight.personalLastSighting - transform.position;
-
-		// If the the last personal sighting of the player is not close...
-		//if(sightingDeltaPos.sqrMagnitude > 4f)
-			// ... set the destination for the NavMeshAgent to the last personal sighting of the player.
-			//nav.destination = enemySight.personalLastSighting;
-
-		// Set the appropriate speed for the NavMeshAgent.
-		nav.speed = chaseSpeed;
-
-		// If near the last personal sighting...
-		if(nav.remainingDistance < nav.stoppingDistance)
-		{
-			// ... increment the timer.
-			chaseTimer += Time.deltaTime;
-
-			// If the timer exceeds the wait time...
-			if(chaseTimer >= chaseWaitTime)
-			{
-				// ... reset last global sighting, the last personal sighting and the timer.
-				 
-				chaseTimer = 0f;
-			}
-		}
-		else
-			// If not near the last sighting personal sighting of the player, reset the timer.
-			chaseTimer = 0f;
-	}
-
-
-
-
-
-	void Patrolling ()
-	{
-		if (currentWP != PlayerPrefs.GetInt("LatestWayPoint", -1)){
-			PlayerPrefs.SetInt("LatestWayPoint", currentWP);
-		}
-
-		// if (PlayerPrefs.GetInt("LatestWayPoint", -1) == 2 && player.tag == "Opponent_4" && !speedHandled) {
-		// 		FindObjectOfType<CinemachineVirtualCamera>().Follow = player;
-		// 		FindObjectOfType<CinemachineVirtualCamera>().LookAt = player;
-
-		// 		//nav.speed = nav.speed + 20;
-		// 		speedHandled = true;
-		// 	} else if (!speedHandled){
-		// 		nav.speed = patrolSpeed;
-		// 	}
-
-		//nav.speed = speed * 2;
-
-		float dist = Vector3.Distance (waypoints [currentWP].position, nav.transform.position);
-
-
-		if( dist < 6.0f ){
-
-				 
-				// ... increment the wayPointIndex.
-				if(currentWP == waypoints.Length - 1)
-					currentWP = 0;
-				else {
-
-					Vector3 p = Vector3.MoveTowards(transform.position, waypoints[currentWP].position, nav.speed * Time.deltaTime);
-            		 GetComponent<Rigidbody>().MovePosition(p);
-
-					currentWP++;
-
-				}
-
-		}
-
-
-
-		// if(nav.destination != patrolWayPoints[wayPointIndex].transform.position){
-		 //	nav.destination = waypoints[currentWP].transform.position;
-		   // player.Translate(0,0, speed * Time.deltaTime);
-		 //	player.LookAt(nav.destination);
-
-		// }
-
-	
-			
-	}
 }
