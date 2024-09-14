@@ -45,7 +45,13 @@ public class OpponentController : MonoBehaviour
 		// Setting up the references.
 		//enemySight = GetComponent<EnemySight>();
 		nav = GetComponent<NavMeshAgent>();
-		//programNumber = PlayerPrefs.GetInt("FieldRunners", 0);
+		// programNumber = PlayerPrefs.GetInt("FieldRunners", 0);
+
+
+		Int32.TryParse( this.name.Replace("Opponent_",String.Empty),out programNumber);
+
+
+
 
 		// if(programNumber < 1){
 		// 	return;
@@ -53,7 +59,7 @@ public class OpponentController : MonoBehaviour
 		String playerString = $"Opponent_{programNumber}";
 		//player = GameObject.FindGameObjectWithTag(playerString).transform;
 		player = transform;
-		PlayerPrefs.SetInt("FieldRunners", programNumber - 1);
+		//PlayerPrefs.SetInt("FieldRunners", programNumber - 1);
 		//playerHealth = player.GetComponent<PlayerHealth>();
 		//lastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
 
@@ -62,23 +68,25 @@ public class OpponentController : MonoBehaviour
 
 	}
 
-// 	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter(Collider other) {
 
-// 		if(other.name == "Side_Fence"){
-// 			return;
-// 		}
+		if(other.name == "Side_Fence"){
+			return;
+		}
 
-// 	 	MeshRenderer m = GetComponent<MeshRenderer>();
-// 		UnityEngine.Vector3 vec = m.bounds.size;
+	 	MeshRenderer m = GetComponent<MeshRenderer>();
+		UnityEngine.Vector3 vec = m.bounds.size;
 
-// 		//	other.transform.Translate()
+		//	other.transform.Translate()
 
-// 	  	if(GameSharedMemory.currentWP > 10){
-// 	 		float oldx = other.transform.position.x;
+	  	if(GameSharedMemory.currentWP > 10){
+	 		float oldx = other.transform.position.x;
 
-// 		// 	other.transform.Translate(-3.0f,0,0);
-// 		print($"***** GameObject {other.name} as moved to {other.transform.position.x} and old x was {oldx}");}
-//   }
+			// 	other.transform.Translate(-3.0f,0,0);
+			print($"***** GameObject {other.name} as moved to {other.transform.position.x} and old x was {oldx}");
+		
+		}
+  }
 
 
 	// void OnControllerColliderHit(ControllerColliderHit hit) {
@@ -86,19 +94,27 @@ public class OpponentController : MonoBehaviour
  
     //   print($"**** GameObject {hit.gameObject.name} Was Hit!!!!");
 	  	
-	// }
-
+ 
 
 
 void Start(){		
 		
-	Transform horseLOD =	 player.Find("Horse_Mobile/horse/horse_body");
+	print($"Inside Start()");
+	Transform horseLOD = player.Find("Horse_Mobile/horse/horse_body");
 	Renderer renderer = horseLOD.GetComponent<Renderer>();
 
    if(0 < programNumber && programNumber <= 6 ){
 
-	string filename = $"Assets/HorseJockey/Textures/Horse_body_0{programNumber}.tga";
-	var rawData = System.IO.File.ReadAllBytes(filename);
+
+	print($"Before Loading Assets/HorseJockey/Textures/Horse_body_0{programNumber}.tga");
+
+	string filename = $"Horse_body_0{programNumber}.tga";
+
+
+	print($"After Loading Assets/HorseJockey/Textures/Horse_body_0{programNumber}.tga and filename is {filename}");
+
+
+	var rawData = Resources.Load(filename);
 	//Texture2D tex = new Texture2D(2048, 2048); // Create an empty Texture; size doesn't matter (she said)
 	Texture2D tex = Resources.Load<Texture2D>($"horse_body_0{programNumber}");
 	//tex.LoadImage(rawData);
@@ -125,10 +141,10 @@ void Start(){
 	tracker = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
 	DestroyImmediate(tracker.GetComponent<Collider>());
  	tracker.GetComponent<MeshRenderer>().enabled = false;
-	var myPos = this.transform.position ;
+	var myPos = transform.position ;
 	myPos.z -= 10f;
 	tracker.transform.position = myPos;
-	tracker.transform.rotation = this.transform.rotation;
+	tracker.transform.rotation = transform.rotation;
 
 	foreach (Animator anim in transform.GetComponentsInChildren<Animator> ()) {
 
@@ -139,7 +155,7 @@ void Start(){
 
  void ProgressTracker(){
 
-	if(Vector3.Distance(tracker.transform.position, this.transform.position) > lookAhead)
+	if(Vector3.Distance(tracker.transform.position, transform.position) > lookAhead)
 		return;
 
 
@@ -173,6 +189,7 @@ void Start(){
 		if(!GameSharedMemory.playGame){
 			return;
 		}
+
 
 		ProgressTracker();
 

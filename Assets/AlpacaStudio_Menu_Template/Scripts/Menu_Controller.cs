@@ -23,8 +23,8 @@ public class Menu_Controller : MonoBehaviour {
 	void Awake () {
 			PlayerPrefs.SetInt("_Mute", 0);
 		
-		scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-		PlayerPrefs.SetString("_LastScene", scene.name.ToString()); 
+		// scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+		// PlayerPrefs.SetString("_LastScene", scene.name.ToString()); 
 		PlayerPrefs.SetInt("FieldRunners",6);
 		//Debug.Log(scene.name);
 	}
@@ -36,7 +36,7 @@ public class Menu_Controller : MonoBehaviour {
 	
 	public void PlayGame () {
 		_audioSource.PlayOneShot(_audioClip);
-		PlayerPrefs.SetString("_LastScene", scene.name);
+		//PlayerPrefs.SetString("_LastScene", scene.name);
 
 		InputField input = GameObject.Find("FinishOrderInput").GetComponent<InputField>();
 
