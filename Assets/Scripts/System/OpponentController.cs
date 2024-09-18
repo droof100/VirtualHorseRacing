@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System;
+using System.Collections.Generic;
 
 
 public class OpponentController : MonoBehaviour
@@ -195,8 +196,23 @@ void Start(){
 
 		float pathOffset = -.5f;
 
-		if(currentWP > 8){
-			pathOffset = .9f;
+
+		 List<String> selectedFinish = new List<String>{GameSharedMemory.selectedPlace.name, GameSharedMemory.selectedWinner.name};
+
+        // Cast a sphere wrapping character controller 10 meters forward
+        // to see if it is about to hit anything.
+		if(currentWP > 8 ){
+				if(GameSharedMemory.currentLeader == GameSharedMemory.selectedPlace 
+					&& this.gameObject == GameSharedMemory.currentLeader
+					&& GameSharedMemory.currentSecondRunner == GameSharedMemory.selectedWinner){
+					pathOffset = 3.0f;
+				} else if( selectedFinish.Contains(this.name)){
+					pathOffset = 0;
+				} else if(this.name == "Opponent_1") {
+					pathOffset = 2.0f;
+				} else {
+					pathOffset = .9f;
+				}
 		}
 
 	
