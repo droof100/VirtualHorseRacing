@@ -16,6 +16,8 @@ This project is a proof of concept for dynamically setting the finish order in a
 
 5. **Dynamic Adjustment** - The race controller adjusts horse speeds in real-time to ensure the predetermined horses cross the finish line in the correct order
 6. **Result** - The finish order is displayed at the end of the race
+   <img width="1045" height="554" alt="image" src="https://github.com/user-attachments/assets/6d70f5ff-3ff4-45b8-9f11-7015197a316b" />
+
 
 ## Key Features
 
